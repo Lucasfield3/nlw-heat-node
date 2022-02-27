@@ -1,11 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es2017",                         
-    "module": "commonjs",                      
-    "strict": false,                                      
-    "skipLibCheck": true,  
-    "esModuleInterop":true,
-    "forceConsistentCasingInFileNames":true, 
-    "typeRoots": ["./src/@types", "node_modules/@types"]
+     "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
+      ],
+     "target": "es5",
+     "module": "commonjs",
+     "moduleResolution": "node",
+     "outDir": "app/build",
+     "emitDecoratorMetadata": true,
+     "experimentalDecorators": true,
+     "sourceMap": true,
+     "esModuleInterop": true,
+     "strict": false ,
+     "strictPropertyInitialization": false,
+     "forceConsistentCasingInFileNames": true,
+     "typeRoots": ["./src/@types"],  
+     "skipLibCheck": true,             
   }
 }
