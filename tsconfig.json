@@ -17,6 +17,7 @@
      "strictPropertyInitialization": false,
      "forceConsistentCasingInFileNames": true,
      "typeRoots": ["./src/@types"],  
-     "skipLibCheck": true,             
-  }
+     "skipLibCheck": true,
+     "noImplicitAny": false,             
+  },
 }
