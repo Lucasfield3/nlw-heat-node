@@ -6,7 +6,7 @@
         "esnext"
       ],
      "target": "es5",
-     "module": "commonjs",
+     "module": "esnext",
      "moduleResolution": "node",
      "outDir": "app/build",
      "emitDecoratorMetadata": true,
