@@ -1,9 +1,9 @@
-import prismaClient from "../prisma"
+import prisma from "../prisma"
 import { io } from '../app'
 
 class CreateMessageService{
     async execute(text: string, user_id: string){
-       const message = await prismaClient.message.create({
+       const message = await prisma.message.create({
            data:{
                text,
                user_id
