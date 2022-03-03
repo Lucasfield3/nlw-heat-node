@@ -5,8 +5,8 @@
         "dom.iterable",
         "esnext"
       ],
-    "target": "esnext",
-    "module": "commonjs",
+     "target": "es5",
+     "module": "esnext",
      "moduleResolution": "node",
      "outDir": "app/build",
      "emitDecoratorMetadata": true,
