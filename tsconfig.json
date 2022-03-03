@@ -5,8 +5,8 @@
         "dom.iterable",
         "esnext"
       ],
-     "target": "es5",
-     "module": "esnext",
+     "target": "es6",
+     "module": "commonjs",
      "moduleResolution": "node",
      "outDir": "app/build",
      "emitDecoratorMetadata": true,
@@ -18,6 +18,6 @@
      "forceConsistentCasingInFileNames": true,
      "typeRoots": ["./src/@types"],  
      "skipLibCheck": true,
-     "noImplicitAny": false,             
+     "noImplicitAny": false,          
   },
 }
