@@ -15,7 +15,7 @@ app.use(express.json())
 
 const io = new Server(serverHttp, {
     cors: {
-        origin: "*",
+        origin: "http://localhost:3000",
     }
 })
 
