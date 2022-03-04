@@ -20,6 +20,8 @@ export function ensureAuthenticated(request: Request, response: Response, next: 
 
         request.user_id = sub
 
+        response.status(200).json(sub)
+
         return next()
     } catch (error) {
         return response.status(401).json({errorCode: 'token invalid!'})
