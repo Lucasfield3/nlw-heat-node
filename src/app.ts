@@ -13,9 +13,12 @@ app.use(cors())
 const serverHttp = http.createServer(app)
 
 const io = new Server(serverHttp, {
-    cors:{
-        origin: '*'
-    }
+    cors: {
+        origin: "https://example.com",
+        methods: ["GET", "POST"],
+        allowedHeaders: ["my-custom-header"],
+        credentials: true
+      }
 })
 
 io.on("connection", (socket) => {
