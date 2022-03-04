@@ -11,22 +11,18 @@ const app = express()
 app.use(cors())
 
 const serverHttp = http.createServer(app)
+app.use(express.json())
 
 const io = new Server(serverHttp, {
     cors: {
         origin: "*",
-        methods: ["GET", "POST"],
-        allowedHeaders: ["my-custom-header"],
-        credentials: true,
-        optionsSuccessStatus:200
-      }
+    }
 })
 
 io.on("connection", (socket) => {
     console.log(`Usuário conectado no socket ${socket.id}`)
 })
 
-app.use(express.json())
 
 app.use(router)
 
