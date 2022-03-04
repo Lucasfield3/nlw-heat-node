@@ -1,5 +1,5 @@
 import 'dotenv/config' 
-import express from 'express'
+import express, { Request, Response, NextFunction } from 'express'
 import http from 'http'
 import cors from 'cors'
 
@@ -23,6 +23,21 @@ io.on("connection", (socket) => {
     console.log(`Usuário conectado no socket ${socket.id}`)
 })
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  
+   // Add this
+   if (req.method === 'OPTIONS') {
+  
+        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, OPTIONS');
+        res.header('Access-Control-Max-Age', '120');
+        return res.status(200).json({});
+    }
+  
+    next();
+  
+  });
 
 app.use(router)
 
