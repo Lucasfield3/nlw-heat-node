@@ -14,7 +14,7 @@ const serverHttp = http.createServer(app)
 
 const io = new Server(serverHttp, {
     cors: {
-        origin: "https://example.com",
+        origin: "*",
         methods: ["GET", "POST"],
         allowedHeaders: ["my-custom-header"],
         credentials: true
