@@ -17,7 +17,8 @@ const io = new Server(serverHttp, {
         origin: "*",
         methods: ["GET", "POST"],
         allowedHeaders: ["my-custom-header"],
-        credentials: true
+        credentials: true,
+        optionsSuccessStatus:200
       }
 })
 
