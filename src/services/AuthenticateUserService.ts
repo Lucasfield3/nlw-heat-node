@@ -62,8 +62,6 @@ class AuthenticateUserService {
         const token = sign(
             {
                 user:{
-                    name:user.name,
-                    avatar_url:user.avatar_url,
                     id:user.id
                 },
             },
