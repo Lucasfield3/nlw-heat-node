@@ -1,5 +1,5 @@
 import 'dotenv/config' 
-import express, { Request, Response, NextFunction } from 'express'
+import express from 'express'
 import http from 'http'
 import cors from 'cors'
 
@@ -25,17 +25,17 @@ io.on("connection", (socket) => {
 
 app.use(router)
 
-app.get('/github', (req, res) => {
+// app.get('/github', (req, res) => {
     
-    res.redirect(`https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`)
+//     res.redirect(`https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`)
 
-})
+// })
 
-app.get('/signin/callback', (req, res) => {
-    const { code } = req.query
+// app.get('/signin/callback', (req, res) => {
+//     const { code } = req.query
 
-    return res.json(code)
-})
+//     return res.json(code)
+// })
 
 
 export {serverHttp, io}
