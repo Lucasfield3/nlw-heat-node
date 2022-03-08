@@ -9,9 +9,9 @@ import ensureAuthenticated from './middleware/ensureAuthenticated'
 const router = Router()
 
 router.post('/authenticate', new AuthenticateUserController().handle)
-router.post('/messages/:id', ensureAuthenticated, new CreateMessageController().handle)
+router.post('/messages', ensureAuthenticated, new CreateMessageController().handle)
 
 router.get('/messages/last-3', new Get3LastMessagesController().handle)
-router.get('/profile/:id', ensureAuthenticated, new ProfileUserController().handle)
+router.get('/profile', ensureAuthenticated, new ProfileUserController().handle)
 
 export { router }
