@@ -7,20 +7,18 @@ interface IPayload {
 
 export function ensureAuthenticated(request: Request, response: Response, next: NextFunction){
 
-    const token =  request.headers['x-access-token']
+    const authToken = request.headers.authorization
 
-    if(!token){
+    if(!authToken){
         return response.status(401).json({errorCode: 'token invalid!'})
     }
 
-    // const [, token] = authToken.split(" ")
+    const [, token] = authToken.split(" ")
 
     try {
-        const { sub } = verify(String(token), process.env.JWT_SECRET) as IPayload
+        const { sub } = verify(token, process.env.JWT_SECRET) as IPayload
 
         request.user_id = sub
-
-        response.json({token:token})
 
         return next()
     } catch (error) {
