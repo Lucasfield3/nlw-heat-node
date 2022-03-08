@@ -13,6 +13,8 @@ app.use(cors())
 const serverHttp = http.createServer(app)
 app.use(express.json())
 
+app.use(router)
+
 const io = new Server(serverHttp, {
     cors: {
         origin: "http://localhost:3000",
@@ -23,7 +25,7 @@ io.on("connection", (socket) => {
     console.log(`Usuário conectado no socket ${socket.id}`)
 })
 
-app.use(router)
+
 
 // app.get('/github', (req, res) => {
     
