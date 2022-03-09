@@ -16,7 +16,7 @@ app.use(express.json())
 
 const io = new Server(serverHttp, {
     cors: {
-        origin: "http://localhost:4173",
+        origin: "https://nlw-heat-react-tan.vercel.app",
     }
 })
 
